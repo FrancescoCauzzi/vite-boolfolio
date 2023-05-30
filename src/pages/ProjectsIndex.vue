@@ -2,10 +2,10 @@
 import axios from "axios";
 
 // components
-import ProjectCard from "./components/ProjectCard.vue";
+import ProjectCard from "../components/ProjectCard.vue";
 
-export default (await import("vue")).defineComponent({
-  name: "App",
+export default {
+  name: "ProjectsIndex",
   components: { ProjectCard },
   data() {
     return {
@@ -32,52 +32,52 @@ export default (await import("vue")).defineComponent({
       this.getProjects();
     },
   },
-});
+};
 </script>
 
 <template>
   <div class="container py-4">
     <h1>All the projects</h1>
-    <hr />
-    <div class="__projects-ctn mb-5">
-      <div class="__card-ctn" v-for="project in projects">
-        <ProjectCard :project="project"></ProjectCard>
-      </div>
+  </div>
+  <hr />
+  <div class="container __projects-ctn mb-5">
+    <div class="__card-ctn" v-for="project in projects">
+      <ProjectCard :project="project"></ProjectCard>
     </div>
-    <div class="__page-links d-flex gap-3 justify-content-center">
-      <a
-        class="btn btn-primary"
-        v-if="currentPage > 1"
-        @click.prevent="fetchPage(1)"
-        >First</a
-      >
-      <a
-        class="btn btn-primary"
-        v-if="currentPage > 1"
-        @click.prevent="fetchPage(currentPage - 1)"
-        >Previous</a
-      >
-      <a
-        class="btn btn-primary"
-        v-for="page in totalPages"
-        :key="page"
-        @click.prevent="fetchPage(page)"
-        :class="page === currentPage ? 'disabled' : ''"
-        >{{ page }}</a
-      >
-      <a
-        class="btn btn-primary"
-        v-if="currentPage < totalPages"
-        @click.prevent="fetchPage(currentPage + 1)"
-        >Next</a
-      >
-      <a
-        class="btn btn-primary"
-        v-if="currentPage < totalPages"
-        @click.prevent="fetchPage(totalPages)"
-        >Last</a
-      >
-    </div>
+  </div>
+  <div class="__page-links d-flex gap-3 justify-content-center">
+    <a
+      class="btn btn-primary"
+      v-if="currentPage > 1"
+      @click.prevent="fetchPage(1)"
+      >First</a
+    >
+    <a
+      class="btn btn-primary"
+      v-if="currentPage > 1"
+      @click.prevent="fetchPage(currentPage - 1)"
+      >Previous</a
+    >
+    <a
+      class="btn btn-primary"
+      v-for="page in totalPages"
+      :key="page"
+      @click.prevent="fetchPage(page)"
+      :class="page === currentPage ? 'disabled' : ''"
+      >{{ page }}</a
+    >
+    <a
+      class="btn btn-primary"
+      v-if="currentPage < totalPages"
+      @click.prevent="fetchPage(currentPage + 1)"
+      >Next</a
+    >
+    <a
+      class="btn btn-primary"
+      v-if="currentPage < totalPages"
+      @click.prevent="fetchPage(totalPages)"
+      >Last</a
+    >
   </div>
 </template>
 

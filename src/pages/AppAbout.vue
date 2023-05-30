@@ -4,6 +4,8 @@ export default {
 };
 </script>
 <template>
-  <div>You are in the about-us page</div>
+  <div class="container">
+    <div>You are in the about-us page</div>
+  </div>
 </template>
 <style lang="scss" scoped></style>
