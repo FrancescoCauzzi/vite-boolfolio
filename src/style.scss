@@ -1,2 +1,25 @@
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: fixed;
+  height: 60px;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+main {
+  padding-top: 60px;
+  min-height: calc(100vh - 60px);
+}
+
+footer {
+  height: 60px;
+}

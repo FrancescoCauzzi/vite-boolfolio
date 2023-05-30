@@ -15,10 +15,16 @@ export default {
 </script>
 
 <template>
-  <AppHeader></AppHeader>
-  <!-- here we will get the router component visualized -->
-  <router-view></router-view>
-  <AppFooter></AppFooter>
+  <header>
+    <AppHeader></AppHeader>
+  </header>
+  <main>
+    <!-- here we will get the router component visualized -->
+    <router-view></router-view>
+  </main>
+  <footer>
+    <AppFooter></AppFooter>
+  </footer>
 </template>
 
 <style scoped></style>
