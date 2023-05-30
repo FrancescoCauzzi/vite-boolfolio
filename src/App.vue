@@ -62,7 +62,7 @@ export default (await import("vue")).defineComponent({
         v-for="page in totalPages"
         :key="page"
         @click.prevent="fetchPage(page)"
-        :disabled="page === currentPage"
+        :class="page === currentPage ? 'disabled' : ''"
         >{{ page }}</a
       >
       <a
@@ -98,5 +98,10 @@ export default (await import("vue")).defineComponent({
 
 a {
   cursor: pointer;
+}
+
+a.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 </style>
