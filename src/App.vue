@@ -39,12 +39,12 @@ export default (await import("vue")).defineComponent({
   <div class="container py-3">
     <h1>All the projects</h1>
     <hr />
-    <div class="__projects-ctn">
+    <div class="__projects-ctn mb-5">
       <div class="__card-ctn" v-for="project in projects">
         <ProjectCard :project="project"></ProjectCard>
       </div>
     </div>
-    <div class="__page-links d-flex gap-3">
+    <div class="__page-links d-flex gap-3 justify-content-center">
       <a v-if="currentPage > 1" @click.prevent="fetchPage(1)">First</a>
       <a v-if="currentPage > 1" @click.prevent="fetchPage(currentPage - 1)"
         >Previous</a
