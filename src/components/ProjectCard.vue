@@ -28,12 +28,10 @@ export default {
 <template>
   <div class="card __project">
     <img :src="coverImage" class="card-img-top" alt="cannot retrieve image" />
-    <div class="card-body d-flex flex-column gap-3">
+    <div class="card-body d-flex flex-column gap-2">
       <h5 class="card-title">{{ project.name }}</h5>
       <small
-        >Type:{{
-          project.type ? project.type.name : "Type not specified"
-        }}</small
+        >({{ project.type ? project.type.name : "Type not specified" }})</small
       >
       <div class="__technologies d-flex gap-1">
         <span
@@ -54,7 +52,7 @@ export default {
   img {
     object-fit: contain;
     width: 100%;
-    height: 100%;
+    height: 200px;
   }
   .__technologies {
     overflow-x: auto;

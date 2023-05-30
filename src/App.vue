@@ -36,7 +36,7 @@ export default (await import("vue")).defineComponent({
 </script>
 
 <template>
-  <div class="container py-3">
+  <div class="container py-4">
     <h1>All the projects</h1>
     <hr />
     <div class="__projects-ctn mb-5">
@@ -45,22 +45,36 @@ export default (await import("vue")).defineComponent({
       </div>
     </div>
     <div class="__page-links d-flex gap-3 justify-content-center">
-      <a v-if="currentPage > 1" @click.prevent="fetchPage(1)">First</a>
-      <a v-if="currentPage > 1" @click.prevent="fetchPage(currentPage - 1)"
+      <a
+        class="btn btn-primary"
+        v-if="currentPage > 1"
+        @click.prevent="fetchPage(1)"
+        >First</a
+      >
+      <a
+        class="btn btn-primary"
+        v-if="currentPage > 1"
+        @click.prevent="fetchPage(currentPage - 1)"
         >Previous</a
       >
       <a
+        class="btn btn-primary"
         v-for="page in totalPages"
         :key="page"
         @click.prevent="fetchPage(page)"
+        :disabled="page === currentPage"
         >{{ page }}</a
       >
       <a
+        class="btn btn-primary"
         v-if="currentPage < totalPages"
         @click.prevent="fetchPage(currentPage + 1)"
         >Next</a
       >
-      <a v-if="currentPage < totalPages" @click.prevent="fetchPage(totalPages)"
+      <a
+        class="btn btn-primary"
+        v-if="currentPage < totalPages"
+        @click.prevent="fetchPage(totalPages)"
         >Last</a
       >
     </div>
