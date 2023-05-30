@@ -16,10 +16,8 @@ export default {
 
 <template>
   <AppHeader></AppHeader>
-
   <!-- here we will get the router component visualized -->
   <router-view></router-view>
-
   <AppFooter></AppFooter>
 </template>
 

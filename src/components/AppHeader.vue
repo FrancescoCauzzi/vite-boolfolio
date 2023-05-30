@@ -41,8 +41,8 @@ export default {
               >
             </li>
 
-            <li class="nav-item">
-              <router-link class="nav-link" :to="{ name: 'posts.index' }"
+            <!-- <li class="nav-item">
+              <router-link class="nav-link" :to="{ name: 'projects.index' }"
                 >All the projects</router-link
               >
             </li>
@@ -51,7 +51,7 @@ export default {
               <router-link class="nav-link" :to="{ name: 'about' }"
                 >Who am I?</router-link
               >
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
