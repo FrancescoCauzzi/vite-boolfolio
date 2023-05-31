@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <div class="card __project">
+  <div class="card __project py-2">
     <img :src="coverImage" class="card-img-top" alt="cannot retrieve image" />
     <div class="card-body d-flex flex-column gap-2">
       <h5 class="card-title">{{ project.name }}</h5>
@@ -43,6 +43,13 @@ export default {
 
       <p class="card-text">{{ shortDescription }}</p>
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+    <div class="text-center">
+      <router-link
+        :to="{ name: 'project.show', params: { slug: project.sluf } }"
+        class="btn btn-outline-primary"
+        >Show the project</router-link
+      >
     </div>
   </div>
 </template>
