@@ -34,7 +34,7 @@ export default {
 };
 </script>
 <template>
-  <div v-if="isLoading">
+  <div v-if="isLoading" id="spinner-container">
     <div class="spinner-border" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
@@ -48,3 +48,15 @@ export default {
     </div>
   </div>
 </template>
+<style lang="scss">
+#spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+}
+</style>
