@@ -50,15 +50,18 @@ export default {
         <img :src="projectImage" alt="" />
       </div>
       <h1>{{ project.name }}</h1>
+      <div class="__technologies"></div>
       <h4>
-        {{ project.type?.name }}
+        {{ project.type ? project.type.name : "No type given" }}
       </h4>
       <hr />
       <p>{{ project.description }}</p>
       <h4></h4>
     </div>
     <div v-else>
-      <div class="alert danger-aler" role="alert">No project found</div>
+      <div class="alert alert-danger text-center" role="alert">
+        No project found
+      </div>
     </div>
   </div>
 </template>
@@ -78,5 +81,14 @@ export default {
     max-height: 400px;
     object-fit: cover;
   }
+}
+
+.__technologies {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.8em 0;
+  overflow-x: auto;
 }
 </style>
