@@ -66,7 +66,7 @@ export default {
         id="type_id"
         v-model="selectedTypeId"
         @change="fetchPage(1)"
-        class="form-select"
+        class="form-select w-25"
       >
         <option value="">All</option>
         <option v-for="type in types" :value="type.id">
