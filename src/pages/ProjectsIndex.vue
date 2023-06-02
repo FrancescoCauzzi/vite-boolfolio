@@ -69,7 +69,9 @@ export default {
         class="form-select"
       >
         <option value="">All</option>
-        <option :value="type.id" v-for="type in types">{{ type.name }}</option>
+        <option v-for="type in types" :value="type.id">
+          {{ type.name }}
+        </option>
       </select>
     </form>
   </div>
