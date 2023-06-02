@@ -8,24 +8,29 @@ export default {
       isLoading: true,
       projectFound: false,
       projectSlug: "",
+      baseUrl: "http://127.0.0.1:8000/",
     };
   },
   mounted() {
     this.projectSlug = this.$route.params.slug;
     this.getProject();
   },
+  computed: {
+    projectImage() {
+      return this.baseUrl + "storage/" + this.project.cover_image;
+    },
+  },
   methods: {
     getProject() {
       axios
-        .get("http://127.0.0.1:8000/api/projects/" + this.projectSlug)
+        .get(this.baseUrl + "api/projects/" + this.projectSlug)
         .then((response) => {
           console.log("project:", response);
+          this.isLoading = false;
           if (response.data.success == true) {
             this.project = response.data.project;
             this.projectFound = true;
-            this.isLoading = false;
           } else {
-            this.isLoading = false;
             this.postFound = false;
           }
         });
@@ -41,7 +46,16 @@ export default {
   </div>
   <div v-else class="container py-5">
     <div v-if="projectFound">
+      <div class="__proj-img text-center">
+        <img :src="projectImage" alt="" />
+      </div>
       <h1>{{ project.name }}</h1>
+      <h4>
+        {{ project.type?.name }}
+      </h4>
+      <hr />
+      <p>{{ project.description }}</p>
+      <h4></h4>
     </div>
     <div v-else>
       <div class="alert danger-aler" role="alert">No project found</div>
@@ -58,5 +72,11 @@ export default {
   left: 0;
   width: 100%;
   height: 600px;
+}
+.__proj-img {
+  img {
+    max-height: 400px;
+    object-fit: cover;
+  }
 }
 </style>

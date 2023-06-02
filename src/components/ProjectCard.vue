@@ -46,7 +46,7 @@ export default {
     </div>
     <div class="text-center">
       <router-link
-        :to="{ name: 'project.show', params: { slug: project.sluf } }"
+        :to="{ name: 'project.show', params: { slug: project.slug } }"
         class="btn btn-outline-primary"
         >Show the project</router-link
       >

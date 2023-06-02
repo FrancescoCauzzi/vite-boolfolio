@@ -5,6 +5,9 @@ import App from "./App.vue";
 // we import the router here
 import { router } from "./router";
 
+// we import bootstrap here
+import * as bootstrap from "bootstrap";
+
 import "@fortawesome/fontawesome-free/css/all.css";
 
 // then we use it before we mount the app
