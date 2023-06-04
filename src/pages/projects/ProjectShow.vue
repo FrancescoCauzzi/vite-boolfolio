@@ -50,7 +50,13 @@ export default {
         <img :src="projectImage" alt="" />
       </div>
       <h1>{{ project.name }}</h1>
-      <div class="__technologies"></div>
+      <div class="__technologies d-flex gap-1">
+        <span
+          class="badge rounded-pill __badge"
+          v-for="tech in project.technologies"
+          >{{ tech.name }}</span
+        >
+      </div>
       <h4>
         {{ project.type ? project.type.name : "No type given" }}
       </h4>
@@ -90,5 +96,8 @@ export default {
   gap: 0.5em;
   padding: 0.8em 0;
   overflow-x: auto;
+  .__badge {
+    background-color: rgb(14, 91, 147);
+  }
 }
 </style>
