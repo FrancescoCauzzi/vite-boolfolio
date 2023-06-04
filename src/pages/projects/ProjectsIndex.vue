@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // components
-import ProjectCard from "../components/ProjectCard.vue";
+import ProjectCard from "../../components/ProjectCard.vue";
 
 export default {
   name: "ProjectsIndex",

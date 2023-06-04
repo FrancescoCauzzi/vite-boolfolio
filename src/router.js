@@ -3,8 +3,8 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import AppHome from "./pages/AppHome.vue";
 import AppAbout from "./pages/AppAbout.vue";
-import ProjectsIndex from "./pages/ProjectsIndex.vue";
-import ProjectShow from "./pages/ProjectShow.vue";
+import ProjectsIndex from "./pages/projects/ProjectsIndex.vue";
+import ProjectShow from "./pages/projects/ProjectShow.vue";
 
 // we create a new router object to handle our routes
 const router = createRouter({
