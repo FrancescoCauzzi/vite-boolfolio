@@ -5,6 +5,7 @@ import AppHome from "./pages/AppHome.vue";
 import AppAbout from "./pages/AppAbout.vue";
 import ProjectsIndex from "./pages/projects/ProjectsIndex.vue";
 import ProjectShow from "./pages/projects/ProjectShow.vue";
+import NotFound from "./pages/NotFound.vue";
 
 // we create a new router object to handle our routes
 const router = createRouter({
@@ -35,6 +36,14 @@ const router = createRouter({
       // we can pass a name to the route, that we can use to reference it in the navigation
       name: "project.show",
       component: ProjectShow,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "not-found",
+      component: NotFound,
+      meta: {
+        title: "Not Found",
+      },
     },
   ],
 });

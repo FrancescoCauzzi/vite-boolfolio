@@ -26,9 +26,11 @@ export default {
         .get(this.baseUrl + "api/projects/" + this.projectSlug)
         .then((response) => {
           console.log("project:", response);
+
           this.isLoading = false;
           if (response.data.success == true) {
             this.project = response.data.project;
+            document.title = "Boolfolio - " + this.project.name;
             this.projectFound = true;
           } else {
             this.postFound = false;

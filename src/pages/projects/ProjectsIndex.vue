@@ -14,7 +14,7 @@ export default {
       totalPages: 0,
       types: [],
       selectedTypeId: "",
-      projectFound: false,
+      projectsFound: false,
       isLoading: true,
     };
   },
@@ -42,9 +42,9 @@ export default {
             this.projects = response.data.results.data;
             this.totalPages = response.data.results.last_page;
             this.types = response.data.allTypes;
-            this.projectFound = true;
+            this.projectsFound = true;
           } else {
-            this.projectFound = false;
+            this.projectsFound = false;
           }
         });
     },
@@ -69,15 +69,15 @@ export default {
         class="form-select w-25"
       >
         <option value="">All</option>
-        <option v-for="type in types" :value="type.id">
-          {{ type.name }}
+        <option v-for="singleType in types" :value="singleType.id">
+          {{ singleType.name }}
         </option>
       </select>
     </form>
   </div>
   <hr />
   <div v-if="!isLoading" class="container mb-5 d-flex flex-column">
-    <div v-if="projectFound" class="__block-ctn d-flex gap-3 flex-column">
+    <div v-if="projectsFound" class="__block-ctn d-flex gap-3 flex-column">
       <div class="d-flex justify-content-center gap-3">
         <div v-for="project in projects" class="__card-ctn d-flex gap-3">
           <ProjectCard :project="project"></ProjectCard>
