@@ -30,7 +30,9 @@ const router = createRouter({
     },
     // single project
     {
+      // :slug is a dynamic route parameter, that we can use to get the slug from the url and then pass it to the component
       path: "/projects/:slug",
+      // we can pass a name to the route, that we can use to reference it in the navigation
       name: "project.show",
       component: ProjectShow,
     },
